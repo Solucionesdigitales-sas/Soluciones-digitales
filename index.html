@@ -1,10 +1,11 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Plataforma Verificada</title>
-  <meta name="description" content="Acceso VIP por WhatsApp. Atención 24/7.">
+  <meta name="description" content="Acceso por WhatsApp. Atención y soporte." />
+  <meta name="robots" content="noindex,nofollow" />
 
   <!-- Meta Pixel Code -->
   <script>
@@ -24,183 +25,353 @@
       s.parentNode.insertBefore(t,s);
     }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
 
-    fbq('init', '1479248860230971');
+    fbq('init', '905411542433466');
     fbq('track', 'PageView');
   </script>
 
   <noscript>
     <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=1479248860230971&ev=PageView&noscript=1"/>
+      src="https://www.facebook.com/tr?id=905411542433466&ev=PageView&noscript=1"/>
   </noscript>
   <!-- End Meta Pixel Code -->
 
   <style>
-    *{ box-sizing:border-box }
+    :root{
+      /* Paleta Argentina (sobria) */
+      --sky: #74ACDF;
+      --sky-2: #A7D3F5;
+      --ink: #0B1B2B;
+      --ink-2: #102A43;
+      --card: rgba(255,255,255,0.92);
+      --line: rgba(11,27,43,0.10);
+      --muted: rgba(11,27,43,0.62);
+      --text: #0B1B2B;
+      --wa: #25D366;
+      --wa-dark: #1DA851;
+      --shadow: 0 18px 55px rgba(11,27,43,0.22);
+      --radius: 22px;
+    }
+
+    *{ box-sizing:border-box; }
 
     body{
       margin:0;
       min-height:100vh;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      background:
-        linear-gradient(rgba(5,8,20,.85), rgba(5,8,20,.85)),
-        url("bg-slots.png") center / cover no-repeat;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color: var(--text);
       display:flex;
       justify-content:center;
       align-items:flex-start;
-      padding-top:40px;
-      color:#EAF0FF;
+      padding:28px 14px 40px;
+
+      /* Fondo “Argentina” limpio */
+      background:
+        radial-gradient(1200px 700px at 50% -120px, rgba(116,172,223,0.55), rgba(116,172,223,0.00) 60%),
+        linear-gradient(180deg, #FFFFFF 0%, #F5FAFF 45%, #FFFFFF 100%);
+
+      /* Si querés mantener una imagen de fondo, usá esto en vez de lo de arriba:
+      background:
+        linear-gradient(rgba(255,255,255,.78), rgba(255,255,255,.78)),
+        url("bg-slots.png") center / cover no-repeat;
+      */
     }
 
     .wrap{
       width:100%;
-      max-width:420px;
-      padding:20px;
+      max-width:440px;
     }
 
-    .logo{
-      width:150px;
-      height:150px;
-      margin:0 auto 14px;
-      border-radius:50%;
-      background:radial-gradient(circle at top, #2a2a2a, #000);
+    /* Barra superior tipo “portal” */
+    .topbar{
       display:flex;
       align-items:center;
-      justify-content:center;
-      text-align:center;
-      font-weight:900;
-      letter-spacing:.12em;
-      color:#e7a728;
-      box-shadow:0 20px 50px rgba(0,0,0,.6);
-    }
-
-    .vip{
-      text-align:center;
-      margin-bottom:16px;
-    }
-
-    .vip span{
-      border:1px solid rgba(255,200,120,.45);
-      padding:10px 22px;
-      border-radius:999px;
-      font-size:12px;
-      letter-spacing:.12em;
-    }
-
-    .card{
-      background:rgba(8,14,30,.92);
-      border-radius:22px;
-      padding:24px 20px;
-      box-shadow:0 30px 70px rgba(0,0,0,.7);
-      text-align:center;
-    }
-
-    h1{
-      margin:0 0 10px;
-      font-size:28px;
-      text-transform:uppercase;
-    }
-
-    .gold{
-      color:#e7a728;
-    }
-
-    .sub{
-      color:rgba(234,240,255,.7);
+      justify-content:space-between;
+      gap:12px;
+      padding:12px 14px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,0.78);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(11,27,43,0.10);
       margin-bottom:14px;
     }
 
-    .hint{
-      font-size:13px;
-      margin-bottom:18px;
-      opacity:.9;
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      min-width:0;
     }
+
+    .mark{
+      width:38px;
+      height:38px;
+      border-radius: 12px;
+      background: linear-gradient(180deg, var(--sky), var(--sky-2));
+      box-shadow: 0 10px 22px rgba(116,172,223,0.28);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border:1px solid rgba(11,27,43,0.08);
+      flex:0 0 auto;
+    }
+
+    .brand h2{
+      margin:0;
+      font-size:13px;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      color: var(--ink);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .pill{
+      font-size:12px;
+      padding:8px 12px;
+      border-radius: 999px;
+      border:1px solid rgba(116,172,223,0.45);
+      background: rgba(116,172,223,0.10);
+      color: var(--ink);
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      font-weight:700;
+      flex:0 0 auto;
+    }
+
+    .card{
+      border-radius: var(--radius);
+      background: var(--card);
+      border:1px solid var(--line);
+      box-shadow: var(--shadow);
+      padding:22px 18px 18px;
+      overflow:hidden;
+      position:relative;
+    }
+
+    .card:before{
+      content:"";
+      position:absolute;
+      inset:-120px -120px auto -120px;
+      height:220px;
+      background: radial-gradient(closest-side, rgba(116,172,223,0.22), rgba(116,172,223,0.00));
+      pointer-events:none;
+    }
+
+    .hero{
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+      margin-bottom:14px;
+      position:relative;
+    }
+
+    .seal{
+      width:64px;
+      height:64px;
+      border-radius: 18px;
+      background: rgba(116,172,223,0.12);
+      border:1px solid rgba(116,172,223,0.30);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex:0 0 auto;
+    }
+
+    .seal svg{ width:30px; height:30px; }
+
+    h1{
+      margin:0;
+      font-size:22px;
+      line-height:1.15;
+      color: var(--ink);
+      letter-spacing:-0.02em;
+    }
+
+    .sub{
+      margin:8px 0 0;
+      color: var(--muted);
+      font-size:14px;
+      line-height:1.35;
+    }
+
+    .badges{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin:14px 0 16px;
+      position:relative;
+    }
+
+    .badge{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 10px;
+      border-radius: 14px;
+      border:1px solid rgba(11,27,43,0.10);
+      background: rgba(255,255,255,0.72);
+      color: var(--ink-2);
+      font-size:12.5px;
+      font-weight:700;
+    }
+
+    .badge svg{ width:16px; height:16px; opacity:.95; }
 
     .btn{
       width:100%;
       border:none;
-      border-radius:18px;
-      padding:16px;
+      border-radius: 18px;
+      padding:16px 14px;
       font-weight:900;
-      letter-spacing:.05em;
+      letter-spacing:.03em;
       font-size:15px;
       cursor:pointer;
-      background:linear-gradient(180deg,#2eff8f,#1fbf63);
+      background: linear-gradient(180deg, var(--wa), var(--wa-dark));
       color:#062c16;
       display:flex;
       align-items:center;
       justify-content:center;
       gap:10px;
-      box-shadow:0 12px 30px rgba(46,255,143,.35);
+      box-shadow: 0 14px 36px rgba(37,211,102,0.22);
+      transition: transform .08s ease, filter .12s ease, opacity .12s ease;
+      position:relative;
+    }
+
+    .btn:hover{ filter: brightness(1.02); }
+    .btn:active{ transform: translateY(1px); }
+
+    .btn small{
+      display:block;
+      font-weight:800;
+      opacity:.92;
+      letter-spacing:.02em;
+    }
+
+    .hint{
+      margin:10px 0 0;
+      color: rgba(11,27,43,0.55);
+      font-size:12.5px;
+      line-height:1.35;
+      text-align:center;
     }
 
     footer{
       text-align:center;
-      margin-top:14px;
+      margin-top:12px;
       font-size:12px;
-      opacity:.6;
+      color: rgba(11,27,43,0.55);
+    }
+
+    /* Accesibilidad/contraste en pantallas chicas */
+    @media (max-width:360px){
+      h1{ font-size:20px; }
+      .badge{ font-size:12px; }
     }
   </style>
 </head>
 
 <body>
-
   <div class="wrap">
-    <div class="logo">
-      PLATAFORMA<br>VERIFICADA
-    </div>
-
-    <div class="vip">
-      <span>ACCESO VIP</span>
+    <div class="topbar">
+      <div class="brand">
+        <div class="mark" aria-hidden="true">
+          <!-- check simple -->
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M20 7L10 17l-4-4" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h2>Plataforma Verificada</h2>
+      </div>
+      <div class="pill">Canal oficial</div>
     </div>
 
     <div class="card">
-      <h1>OBTENÉ UN <span class="gold">100%</span><br>ADICIONAL</h1>
-      <p class="sub">Acceso inmediato por WhatsApp.</p>
-      <p class="hint">Tocá el botón verde para hablar con un operador.</p>
+      <div class="hero">
+        <div class="seal" aria-hidden="true">
+          <!-- shield -->
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 2l7 4v6c0 5-3 9-7 10C8 21 5 17 5 12V6l7-4z"
+              stroke="#0B1B2B" stroke-width="1.8" stroke-linejoin="round"/>
+            <path d="M8.6 12.2l2.1 2.1 4.8-5" stroke="#0B1B2B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div>
+          <h1>Acceso directo por WhatsApp</h1>
+          <p class="sub">Ingresá al canal de atención para recibir asistencia y acceso guiado.</p>
+        </div>
+      </div>
+
+      <div class="badges" aria-label="Indicadores de confianza">
+        <div class="badge">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 8v4l2.5 2.5" stroke="#0B1B2B" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M12 21a9 9 0 1 0-9-9 9 9 0 0 0 9 9z" stroke="#0B1B2B" stroke-width="1.8"/>
+          </svg>
+          Respuesta rápida
+        </div>
+        <div class="badge">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M20 7L10 17l-4-4" stroke="#0B1B2B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Acceso verificado
+        </div>
+        <div class="badge">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M4 12a8 8 0 0 1 16 0" stroke="#0B1B2B" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M12 12v8" stroke="#0B1B2B" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M8 20h8" stroke="#0B1B2B" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+          Atención 24/7
+        </div>
+      </div>
 
       <button id="waBtn" class="btn" type="button">
-        💬 WHATSAPP · HABLÁ CON UN OPERADOR
+        <!-- icon chat -->
+        <span aria-hidden="true">💬</span>
+        <span>INICIAR CHAT EN WHATSAPP</span>
       </button>
+
+      <p class="hint">Al continuar, se abrirá WhatsApp en una nueva pestaña.</p>
     </div>
 
     <footer>+18 · Jugá con responsabilidad</footer>
   </div>
 
   <script>
-    const PHONE_E164 = "5492236751113";
-    const MESSAGE = "Hola, vengo desde el anuncio. Quiero un usuario y reclamar el bono del 100%.";
+    const PHONE_E164 = "5491176017537";
+
+    // Recomendación: mensaje más neutral (mejor para confianza y revisión).
+    // Si querés conservar tu texto anterior, reemplazá el contenido de MESSAGE.
+    const MESSAGE = "Hola, quiero información para comenzar y recibir la bonificación.;
 
     const btn = document.getElementById("waBtn");
-    let clicked = false;
+    let fired = false;
 
     function goWhatsApp(){
-      window.location.href =
-        "https://wa.me/" + PHONE_E164 + "?text=" + encodeURIComponent(MESSAGE);
+      const url = "https://wa.me/" + PHONE_E164 + "?text=" + encodeURIComponent(MESSAGE);
+      window.open(url, "_blank", "noopener,noreferrer");
     }
 
     btn.addEventListener("click", function(){
-      if(clicked) return;              // evita doble evento/doble redirección
-      clicked = true;
+      if (fired) return;
+      fired = true;
+
       btn.disabled = true;
-      btn.style.opacity = "0.85";
+      btn.style.opacity = "0.92";
 
-      // Dispara Contact en el click (lo que necesitás para la conversión)
-      try{
-        if(typeof window.fbq === "function"){
-          window.fbq('track','Contact', { channel:'whatsapp' });
+      try {
+        if (typeof fbq === "function") {
+          fbq('track', 'Contact', { channel: 'whatsapp' });
 
-          // Opcional (no molesta): Lead para tener alternativa de optimización
-          // window.fbq('track','Lead', { channel:'whatsapp' });
+          // Opcional (solo si realmente medís una compra real en tu embudo):
+          // fbq('track', 'Purchase', { currency: 'USD', value: 1.00 });
         }
-      }catch(e){ /* no-op */ }
+      } catch(e){}
 
-      // Pequeño delay para que el pixel alcance a enviar el evento
-      setTimeout(goWhatsApp, 250);
-
-      // Fallback: por si el navegador bloquea algo, igual redirige
-      setTimeout(goWhatsApp, 1200);
+      setTimeout(goWhatsApp, 220);
     });
   </script>
-
 </body>
 </html>
