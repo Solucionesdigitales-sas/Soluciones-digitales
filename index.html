@@ -1,22 +1,28 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Plataforma Verificada</title>
-  <meta name="description" content="Acceso por WhatsApp. Atención y soporte." />
-  <meta name="robots" content="noindex,nofollow" />
+  <meta name="description" content="Acceso VIP por WhatsApp. Atención 24/7.">
+  <meta name="robots" content="noindex,nofollow">
 
-  <!-- Meta Pixel -->
+  <!-- Meta Pixel Code -->
   <script>
     !function(f,b,e,v,n,t,s){
       if(f.fbq)return;
-      n=f.fbq=function(){ n.callMethod ?
-        n.callMethod.apply(n,arguments) : n.queue.push(arguments) };
+      n=f.fbq=function(){
+        n.callMethod ? n.callMethod.apply(n,arguments) : n.queue.push(arguments)
+      };
       if(!f._fbq)f._fbq=n;
-      n.push=n; n.loaded=!0; n.version='2.0'; n.queue=[];
-      t=b.createElement(e); t.async=!0; t.src=v;
-      s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s);
+      n.push=n;
+      n.loaded=!0;
+      n.version='2.0';
+      n.queue=[];
+      t=b.createElement(e); t.async=!0;
+      t.src=v;
+      s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s);
     }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
 
     fbq('init', '905411542433466');
@@ -27,345 +33,169 @@
     <img height="1" width="1" style="display:none"
       src="https://www.facebook.com/tr?id=905411542433466&ev=PageView&noscript=1"/>
   </noscript>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- End Meta Pixel Code -->
 
   <style>
-    :root{
-      --bg:#06060a;
-      --bg2:#0a0a12;
-      --card:rgba(13,13,20,.82);
-      --card2:rgba(255,255,255,.03);
-      --line:rgba(255,255,255,.09);
-      --text:#ffffff;
-      --muted:rgba(255,255,255,.72);
-
-      --gold1:#f5d58a;
-      --gold2:#d6a94a;
-      --gold3:#b7862b;
-
-      --wa:#25D366;
-      --wa2:#1DA851;
-
-      --shadow:0 22px 70px rgba(0,0,0,.60);
-      --radius:22px;
-    }
-
-    *{box-sizing:border-box}
+    *{ box-sizing:border-box }
 
     body{
       margin:0;
       min-height:100vh;
-      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background:
+        linear-gradient(rgba(5,8,20,.85), rgba(5,8,20,.85)),
+        url("bg-slots.png") center / cover no-repeat;
       display:flex;
       justify-content:center;
       align-items:flex-start;
-      padding:28px 14px 44px;
-      color:var(--text);
-      background:
-        radial-gradient(1100px 620px at 18% -10%, rgba(214,169,74,.22), transparent 60%),
-        radial-gradient(900px 520px at 95% 10%, rgba(245,213,138,.14), transparent 55%),
-        radial-gradient(900px 650px at 50% 120%, rgba(37,211,102,.10), transparent 55%),
-        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+      padding-top:40px;
+      color:#EAF0FF;
     }
 
-    .wrap{width:100%;max-width:460px}
-
-    .topbar{
-      display:flex;align-items:center;justify-content:space-between;
-      padding:12px 14px;margin-bottom:14px;
-      background:rgba(13,13,20,.65);
-      border:1px solid var(--line);
-      border-radius:16px;
-      box-shadow:0 14px 40px rgba(0,0,0,.40);
-      backdrop-filter: blur(10px);
+    .wrap{
+      width:100%;
+      max-width:420px;
+      padding:20px;
     }
 
-    .brand{display:flex;align-items:center;gap:10px}
-
-    /* MARK CASINO (FICHA DORADA) */
-    .mark{
-      width:38px;height:38px;border-radius:12px;
-      background:linear-gradient(180deg, rgba(245,213,138,.95), rgba(214,169,74,.78));
-      box-shadow:0 14px 28px rgba(214,169,74,.25);
-      display:flex;align-items:center;justify-content:center;
-      border:1px solid rgba(255,255,255,.15);
-      position:relative;
-      overflow:hidden;
-    }
-    .mark:before{
-      content:"";
-      position:absolute; inset:-20px;
-      background: radial-gradient(circle at 30% 20%, rgba(255,255,255,.55), transparent 40%);
-      opacity:.55;
-      transform:rotate(12deg);
-    }
-    .mark svg{width:22px;height:22px; position:relative; z-index:1}
-
-    .brand h2{
-      margin:0;
-      font-size:12.5px;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      color:rgba(255,255,255,.92);
+    .logo{
+      width:150px;
+      height:150px;
+      margin:0 auto 14px;
+      border-radius:50%;
+      background:radial-gradient(circle at top, #2a2a2a, #000);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      font-weight:900;
+      letter-spacing:.12em;
+      color:#e7a728;
+      box-shadow:0 20px 50px rgba(0,0,0,.6);
     }
 
-    .pill{
-      display:inline-flex;align-items:center;gap:8px;
-      font-size:11.5px;padding:8px 12px;border-radius:999px;
-      background:rgba(214,169,74,.12);
-      border:1px solid rgba(214,169,74,.28);
-      font-weight:800;text-transform:uppercase;
-      color:var(--gold1);
+    .vip{
+      text-align:center;
+      margin-bottom:16px;
     }
-    .dot{
-      width:8px;height:8px;border-radius:50%;
-      background:var(--wa);
-      box-shadow:0 0 0 4px rgba(37,211,102,.14);
+
+    .vip span{
+      border:1px solid rgba(255,200,120,.45);
+      padding:10px 22px;
+      border-radius:999px;
+      font-size:12px;
+      letter-spacing:.12em;
     }
 
     .card{
-      position:relative;
-      background:linear-gradient(180deg, rgba(13,13,20,.88), rgba(13,13,20,.72));
-      border-radius:var(--radius);
-      border:1px solid var(--line);
-      box-shadow:var(--shadow);
-      padding:22px 18px 18px;
-      overflow:hidden;
-    }
-
-    /* WATERMARK - FICHA */
-    .chip-watermark{
-      position:absolute;right:-60px;top:110px;
-      width:260px;height:260px;pointer-events:none;
-      opacity:.10;transform:rotate(12deg)
-    }
-
-    .glow{
-      position:absolute; inset:-120px -120px auto -120px;
-      height:280px;
-      background: radial-gradient(circle at 40% 35%, rgba(214,169,74,.28), transparent 55%);
-      pointer-events:none;
-      opacity:.65;
-    }
-
-    .hero,.badges,.ctaLine,.btn,.hint,.trust{position:relative;z-index:1}
-
-    .hero{display:flex;gap:14px;margin-bottom:12px}
-
-    .seal{
-      width:64px;height:64px;border-radius:18px;
-      background:linear-gradient(180deg, rgba(214,169,74,.14), rgba(255,255,255,.03));
-      border:1px solid rgba(214,169,74,.25);
-      display:flex;align-items:center;justify-content:center;
-      box-shadow:0 14px 30px rgba(0,0,0,.35);
-    }
-
-    h1{margin:0;font-size:22px;line-height:1.15}
-    .sub{margin:7px 0 0;font-size:13.8px;color:var(--muted);line-height:1.45}
-
-    .miniMark{
-      display:flex;align-items:center;gap:8px;margin-top:10px;
-      font-weight:900;font-size:12.5px;color:var(--gold1);
-      letter-spacing:.02em;
-    }
-    .miniMark svg{width:18px;height:18px}
-
-    .badges{
-      display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 10px
-    }
-
-    .badge{
-      background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.09);
-      padding:10px 10px;border-radius:14px;
-      font-size:12.2px;font-weight:800;
-      color:rgba(255,255,255,.88);
-    }
-
-    .trust{
-      margin:10px 0 14px;
-      padding:12px;
-      border-radius:16px;
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.03);
-      display:grid; gap:10px;
-    }
-    .trustRow{
-      display:flex; gap:10px; align-items:flex-start;
-      color:rgba(255,255,255,.86);
-      font-size:12.6px;
-      line-height:1.35;
-    }
-    .tIcon{
-      width:26px;height:26px;border-radius:10px;
-      border:1px solid rgba(214,169,74,.28);
-      background:rgba(214,169,74,.10);
-      flex:0 0 auto;
-      display:flex; align-items:center; justify-content:center;
-    }
-    .tIcon svg{width:16px;height:16px}
-    .trustRow span{color:rgba(255,255,255,.70); font-weight:600}
-
-    .ctaLine{
+      background:rgba(8,14,30,.92);
+      border-radius:22px;
+      padding:24px 20px;
+      box-shadow:0 30px 70px rgba(0,0,0,.7);
       text-align:center;
-      font-weight:900;
-      margin:6px 0 12px;
-      color:rgba(255,255,255,.92);
+    }
+
+    h1{
+      margin:0 0 10px;
+      font-size:28px;
+      text-transform:uppercase;
+    }
+
+    .gold{
+      color:#e7a728;
+    }
+
+    .sub{
+      color:rgba(234,240,255,.7);
+      margin-bottom:14px;
+    }
+
+    .hint{
+      font-size:13px;
+      margin-bottom:18px;
+      opacity:.9;
     }
 
     .btn{
       width:100%;
       border:none;
-      border-radius:20px;
-      padding:20px 16px;
-      font-size:16.8px;
-      font-weight:950;
-      background:linear-gradient(180deg,var(--wa),var(--wa2));
-      color:#06110a;
-      box-shadow:0 18px 44px rgba(37,211,102,.26);
-      display:flex;gap:12px;justify-content:center;align-items:center;
+      border-radius:18px;
+      padding:16px;
+      font-weight:900;
+      letter-spacing:.05em;
+      font-size:15px;
       cursor:pointer;
-      letter-spacing:.02em;
-    }
-    .btn:active{transform:translateY(1px)}
-
-    .hint{
-      text-align:center;
-      font-size:12px;
-      color:rgba(255,255,255,.62);
-      margin-top:10px
+      background:linear-gradient(180deg,#2eff8f,#1fbf63);
+      color:#062c16;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      box-shadow:0 12px 30px rgba(46,255,143,.35);
     }
 
     footer{
       text-align:center;
-      margin-top:12px;
+      margin-top:14px;
       font-size:12px;
-      color:rgba(255,255,255,.56);
-      line-height:1.4;
+      opacity:.6;
     }
-    .footSmall{margin-top:6px; font-size:11.5px; color:rgba(255,255,255,.46)}
   </style>
 </head>
 
 <body>
-<div class="wrap">
-
-  <div class="topbar">
-    <div class="brand">
-      <div class="mark" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none">
-          <circle cx="12" cy="12" r="8.5" stroke="white" stroke-width="2"/>
-          <circle cx="12" cy="12" r="5" stroke="white" stroke-width="1.3"/>
-        </svg>
-      </div>
-      <h2>Plataforma verificada</h2>
+  <div class="wrap">
+    <div class="logo">
+      PLATAFORMA<br>VERIFICADA
     </div>
 
-    <div class="pill"><span class="dot"></span> Canal oficial</div>
+    <div class="vip">
+      <span>ACCESO VIP</span>
+    </div>
+
+    <div class="card">
+      <h1>OBTENÉ UN <span class="gold">100%</span><br>ADICIONAL</h1>
+      <p class="sub">Acceso inmediato por WhatsApp.</p>
+      <p class="hint">Tocá el botón verde para hablar con un operador.</p>
+
+      <button id="waBtn" class="btn" type="button">
+        💬 WHATSAPP · HABLÁ CON UN OPERADOR
+      </button>
+    </div>
+
+    <footer>+18 · Jugá con responsabilidad</footer>
   </div>
 
-  <div class="card">
-    <div class="glow"></div>
-
-    <!-- WATERMARK -->
-    <div class="chip-watermark" aria-hidden="true">
-      <svg viewBox="0 0 260 260" fill="none">
-        <circle cx="130" cy="130" r="92" stroke="#d6a94a" stroke-width="10"/>
-        <circle cx="130" cy="130" r="58" stroke="#d6a94a" stroke-width="8"/>
-      </svg>
-    </div>
-
-    <div class="hero">
-      <div class="seal" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none">
-          <path d="M12 2l7 4v6c0 5-3 9-7 10-4-1-7-5-7-10V6z"
-            stroke="#f5d58a" stroke-width="1.8"/>
-          <path d="M9.2 12.4l2 2.1 3.8-4.2" stroke="#f5d58a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
-
-      <div>
-        <h1>Acceso verificado por WhatsApp</h1>
-        <p class="sub">Entrás al canal oficial para recibir asistencia guiada y soporte directo en el chat.</p>
-
-        <div class="miniMark">
-          <svg viewBox="0 0 24 24" fill="none">
-            <circle cx="12" cy="12" r="8.6" stroke="#f5d58a" stroke-width="1.8"/>
-            <circle cx="12" cy="12" r="5.2" stroke="#f5d58a" stroke-width="1.3"/>
-          </svg>
-          Acceso VIP • Atención prioritaria
-        </div>
-      </div>
-    </div>
-
-    <div class="badges">
-      <div class="badge">Respuesta rápida</div>
-      <div class="badge">Acceso verificado</div>
-      <div class="badge">Soporte 24/7</div>
-    </div>
-
-    <div class="trust">
-      <div class="trustRow">
-        <div class="tIcon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none">
-            <path d="M12 3l8 4v6c0 6-4 10-8 11C8 23 4 19 4 13V7z" stroke="#f5d58a" stroke-width="1.7"/>
-          </svg>
-        </div>
-        <div><strong>Canal oficial y privado.</strong> <span>Tu consulta se gestiona por WhatsApp, sin formularios eternos.</span></div>
-      </div>
-
-      <div class="trustRow">
-        <div class="tIcon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none">
-            <path d="M8 11l2.2 2.2L16.5 7" stroke="#f5d58a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10z" stroke="#f5d58a" stroke-width="1.3" opacity=".9"/>
-          </svg>
-        </div>
-        <div><strong>Guía clara.</strong> <span>Te orientamos paso a paso para que entres sin complicarte.</span></div>
-      </div>
-
-      <div class="trustRow">
-        <div class="tIcon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none">
-            <path d="M7 7h10v10H7z" stroke="#f5d58a" stroke-width="1.8"/>
-            <path d="M9 9h6v6H9z" stroke="#f5d58a" stroke-width="1.2" opacity=".9"/>
-          </svg>
-        </div>
-        <div><strong>Verificación activa.</strong> <span>Acceso gestionado por soporte para evitar errores y confusiones.</span></div>
-      </div>
-    </div>
-
-    <div class="ctaLine">Para continuar, tocá el botón verde:</div>
-
-    <button id="waBtn" class="btn" type="button">
-      💬 INICIAR CHAT POR WHATSAPP
-    </button>
-
-    <div class="hint">Se abrirá WhatsApp en una nueva pestaña con un mensaje listo.</div>
-  </div>
-
-  <footer>
-    +18 · Jugá con responsabilidad
-    <div class="footSmall">Si el juego te genera problemas, buscá ayuda profesional.</div>
-  </footer>
-</div>
-
-<script>
+ <script>
   const PHONE_E164 = "5492235476129";
-  const MESSAGE = "Hola, quiero más información y recibir la bonificacion.";
+  const MESSAGE = "Hola, quiero mas informacion y reclamar la bonificacion.";
 
-  document.getElementById("waBtn").onclick = function(){
-    try{
-      // Solo Purchase (y PageView ya está arriba)
-      fbq('track','Purchase',{currency:'USD',value:1.00});
-    }catch(e){}
-    window.open("https://wa.me/"+PHONE_E164+"?text="+encodeURIComponent(MESSAGE),'_blank');
+  const btn = document.getElementById("waBtn");
+  let fired = false;
+
+  function goWhatsApp(){
+    const url = "https://wa.me/" + PHONE_E164 + "?text=" + encodeURIComponent(MESSAGE);
+    window.open(url, "_blank", "noopener,noreferrer");
   }
+
+  btn.addEventListener("click", function(){
+    if (fired) return;
+    fired = true;
+
+    btn.disabled = true;
+    btn.style.opacity = "0.85";
+
+    try {
+      if (typeof fbq === "function") {
+        fbq('track', 'Contact', { channel: 'whatsapp' });
+        fbq('track', 'Purchase', { currency: 'USD', value: 1.00 });
+      }
+    } catch(e){}
+
+    setTimeout(goWhatsApp, 250);
+  });
 </script>
-</body>
-</html>
- 
+
+
+
 
