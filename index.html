@@ -1,315 +1,443 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plataforma Verificada</title>
-  <meta name="description" content="Acceso VIP por WhatsApp. Atención 24/7.">
-  <meta name="robots" content="noindex,nofollow">
-
-  <!-- Meta Pixel Code -->
-  <script>
-    !function(f,b,e,v,n,t,s){
-      if(f.fbq)return;
-      n=f.fbq=function(){
-        n.callMethod ? n.callMethod.apply(n,arguments) : n.queue.push(arguments)
-      };
-      if(!f._fbq)f._fbq=n;
-      n.push=n;
-      n.loaded=!0;
-      n.version='2.0';
-      n.queue=[];
-      t=b.createElement(e); t.async=!0;
-      t.src=v;
-      s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s);
-    }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
-
-    fbq('init', '905411542433466');
-    fbq('track', 'PageView');
-  </script>
-
-  <noscript>
-    <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=905411542433466&ev=PageView&noscript=1"/>
-  </noscript>
-  <!-- End Meta Pixel Code -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RIVEX | Ropa urbana</title>
+  <meta name="description" content="RIVEX — Ropa urbana y esencial. Pedí por WhatsApp y recibí tu outfit en casa." />
+  <meta name="robots" content="index,follow" />
 
   <style>
-    *{ box-sizing:border-box }
+    :root{
+      --bg:#070A12;
+      --panel: rgba(255,255,255,.06);
+      --stroke: rgba(255,255,255,.12);
+      --text:#E9ECF4;
+      --muted: rgba(233,236,244,.72);
+      --accent:#7C3AED; /* violeta */
+      --accent2:#06B6D4; /* cian */
+      --ok:#22C55E;
+      --shadow: 0 20px 60px rgba(0,0,0,.55);
+      --radius: 18px;
+    }
 
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
     body{
       margin:0;
-      min-height:100vh;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      background:
-        linear-gradient(rgba(5,8,20,.85), rgba(5,8,20,.85)),
-        url("bg-slots.png") center / cover no-repeat;
-      display:flex;
-      justify-content:center;
-      align-items:flex-start;
-      padding-top:40px;
-      color:#EAF0FF;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1200px 800px at 15% 10%, rgba(124,58,237,.28), transparent 55%),
+                  radial-gradient(900px 700px at 85% 0%, rgba(6,182,212,.24), transparent 60%),
+                  radial-gradient(900px 700px at 50% 110%, rgba(34,197,94,.14), transparent 60%),
+                  var(--bg);
+      color:var(--text);
+      overflow-x:hidden;
     }
 
+    a{ color:inherit; text-decoration:none; }
     .wrap{
-      width:100%;
-      max-width:420px;
-      padding:20px;
+      max-width:1100px;
+      margin:0 auto;
+      padding:28px 18px 64px;
     }
 
-    /* Logo: flotación sutil */
-    .logo{
-      width:150px;
-      height:150px;
-      margin:0 auto 14px;
-      border-radius:50%;
-      background:radial-gradient(circle at top, #2a2a2a, #000);
+    /* Header */
+    .topbar{
       display:flex;
       align-items:center;
-      justify-content:center;
-      text-align:center;
-      font-weight:900;
-      letter-spacing:.12em;
-      color:#e7a728;
-      box-shadow:0 20px 50px rgba(0,0,0,.6);
-      animation: floaty 3.2s ease-in-out infinite;
-      transform: translateZ(0);
-    }
-
-    .vip{
-      text-align:center;
-      margin-bottom:16px;
-    }
-
-    .vip span{
-      border:1px solid rgba(255,200,120,.45);
-      padding:10px 22px;
+      justify-content:space-between;
+      gap:12px;
+      padding:10px 12px;
+      border:1px solid var(--stroke);
+      background:rgba(255,255,255,.04);
       border-radius:999px;
-      font-size:12px;
-      letter-spacing:.12em;
+      backdrop-filter: blur(10px);
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding-left:6px;
+    }
+    .logo{
+      width:34px;height:34px;border-radius:12px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 10px 30px rgba(124,58,237,.25);
+      position:relative;
+      overflow:hidden;
+    }
+    .logo:after{
+      content:"";
+      position:absolute; inset:-40%;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.55), transparent 45%);
+      transform: rotate(20deg);
+    }
+    .brandname{
+      font-weight:800;
+      letter-spacing:.18em;
+      font-size:14px;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid var(--stroke);
+      background:rgba(255,255,255,.03);
+      color:var(--muted);
+      font-size:13px;
+      white-space:nowrap;
+    }
+    .dot{
+      width:8px;height:8px;border-radius:99px;background:var(--ok);
+      box-shadow: 0 0 0 4px rgba(34,197,94,.15);
+      animation: pulse 1.8s infinite;
+    }
+    @keyframes pulse{
+      0%,100%{ transform:scale(1); opacity:1; }
+      50%{ transform:scale(1.2); opacity:.65; }
     }
 
-    /* Card: entrada pro */
+    /* Hero */
+    .hero{
+      margin-top:22px;
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap:18px;
+      align-items:stretch;
+    }
     .card{
-      background:rgba(8,14,30,.92);
-      border-radius:22px;
-      padding:24px 20px;
-      box-shadow:0 30px 70px rgba(0,0,0,.7);
-      text-align:center;
-      animation: cardIn .7s ease-out both;
-      transform: translateZ(0);
+      border:1px solid var(--stroke);
+      background:rgba(255,255,255,.04);
+      border-radius:var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+      overflow:hidden;
+    }
+    .heroMain{
+      padding:26px 22px 22px;
+      position:relative;
+    }
+    .glow{
+      position:absolute;
+      inset:-120px -160px auto auto;
+      width:420px; height:420px;
+      background: radial-gradient(circle, rgba(124,58,237,.25), transparent 55%);
+      pointer-events:none;
+      filter: blur(2px);
     }
 
     h1{
       margin:0 0 10px;
-      font-size:28px;
-      text-transform:uppercase;
+      font-size:38px;
+      line-height:1.08;
+      letter-spacing:-.02em;
     }
-
-    .gold{
-      color:#e7a728;
-    }
-
     .sub{
-      color:rgba(234,240,255,.7);
-      margin-bottom:14px;
+      margin:0 0 18px;
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.6;
+      max-width:58ch;
     }
-
-    /* Hint: línea animada debajo */
-    .hint{
-      font-size:13px;
-      margin-bottom:18px;
-      opacity:.9;
-      position: relative;
-      display: inline-block;
-    }
-    .hint::after{
-      content:"";
-      position:absolute;
-      left:0;
-      right:0;
-      bottom:-8px;
-      height:2px;
-      border-radius:2px;
-      background: rgba(37,211,102,.55);
-      transform: scaleX(.2);
-      transform-origin:left;
-      animation: hintLine 1.6s ease-in-out infinite;
-    }
-
-    .btn{
-      width:100%;
-      border:none;
-      border-radius:18px;
-      padding:16px;
-      font-weight:900;
-      letter-spacing:.05em;
-      font-size:15px;
-      cursor:pointer;
-      background:linear-gradient(180deg,#2eff8f,#1fbf63);
-      color:#062c16;
+    .badges{
       display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin: 10px 0 18px;
+    }
+    .badge{
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid var(--stroke);
+      background:rgba(0,0,0,.18);
+      font-size:13px;
+      color: rgba(233,236,244,.85);
+    }
+
+    .ctaRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:14px;
+    }
+    .btn{
+      display:inline-flex;
       align-items:center;
       justify-content:center;
       gap:10px;
-      box-shadow:0 12px 30px rgba(46,255,143,.35);
-      position: relative;
-      overflow: hidden;
-      transform: translateZ(0);
+      padding:14px 16px;
+      border-radius:14px;
+      border:1px solid var(--stroke);
+      background: rgba(255,255,255,.05);
+      color: var(--text);
+      font-weight:700;
+      cursor:pointer;
+      transition: transform .15s ease, background .2s ease, border-color .2s ease;
+      min-width: 210px;
     }
-
-    /* Botón: palpitar + ring + shine */
-    #waBtn{
-      animation: waPulse 1.4s infinite;
-      box-shadow: 0 12px 30px rgba(46,255,143,.35), 0 10px 22px rgba(0,0,0,.25);
+    .btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.08); }
+    .btn.primary{
+      border-color: rgba(124,58,237,.55);
+      background: linear-gradient(135deg, rgba(124,58,237,.95), rgba(6,182,212,.65));
+      box-shadow: 0 18px 40px rgba(124,58,237,.25);
     }
-
-    #waBtn::after{
-      content:"";
-      position:absolute;
-      inset:-18px;
-      border-radius:999px;
-      background: radial-gradient(circle, rgba(37,211,102,.35), rgba(37,211,102,0) 60%);
-      opacity:0;
-      animation: waRing 1.4s infinite;
-      pointer-events:none;
-    }
-
-    #waBtn::before{
-      content:"";
-      position:absolute;
-      top:-40%;
-      left:-30%;
-      width:60%;
-      height:180%;
-      background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,.25), rgba(255,255,255,0));
-      transform: rotate(18deg);
-      animation: waShine 2.8s infinite;
-      pointer-events:none;
-      opacity: 0;
-    }
-
-    #waBtn:hover{ transform: scale(1.05); }
-    #waBtn:active{ transform: scale(0.985); }
-
-    /* Si queda disabled post-click, frenamos animaciones (queda más "premium") */
-    #waBtn:disabled{
-      cursor: default;
-      animation: none !important;
-    }
-    #waBtn:disabled::before,
-    #waBtn:disabled::after{
-      animation: none !important;
-    }
-
-    footer{
-      text-align:center;
-      margin-top:14px;
+    .btn.primary:hover{ transform: translateY(-2px); }
+    .btn .mini{
       font-size:12px;
-      opacity:.6;
+      font-weight:600;
+      opacity:.9;
     }
 
-    /* Keyframes */
-    @keyframes cardIn{
-      from{ opacity:0; transform: translateY(14px); filter: blur(4px); }
-      to{ opacity:1; transform: translateY(0); filter: blur(0); }
+    /* Side card */
+    .heroSide{
+      padding:18px 16px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    .kpi{
+      padding:14px 14px;
+      border:1px solid var(--stroke);
+      border-radius:16px;
+      background: rgba(0,0,0,.18);
+    }
+    .kpi b{ display:block; font-size:14px; margin-bottom:4px; }
+    .kpi span{ color:var(--muted); font-size:13px; line-height:1.5; }
+
+    /* Products */
+    .section{
+      margin-top:18px;
+      padding:18px;
+    }
+    .section h2{
+      margin:0 0 12px;
+      font-size:18px;
+      letter-spacing:.02em;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+    }
+    .prod{
+      padding:14px;
+      border:1px solid var(--stroke);
+      border-radius:16px;
+      background: rgba(0,0,0,.18);
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      min-height: 150px;
+    }
+    .prodTop{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:10px;
+    }
+    .tag{
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--stroke);
+      color: rgba(233,236,244,.8);
+      background: rgba(255,255,255,.04);
+      white-space:nowrap;
+    }
+    .prod b{ font-size:14px; }
+    .price{
+      margin-top:auto;
+      color: rgba(233,236,244,.92);
+      font-weight:800;
+    }
+    .prod small{ color:var(--muted); line-height:1.4; }
+
+    /* Footer */
+    footer{
+      margin-top:18px;
+      color: var(--muted);
+      font-size:13px;
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      padding: 0 6px;
+    }
+    .links{
+      display:flex; gap:14px; flex-wrap:wrap;
+    }
+    .links a{
+      border-bottom: 1px dashed rgba(233,236,244,.25);
+      padding-bottom:2px;
     }
 
-    @keyframes floaty{
+    /* Floating WhatsApp */
+    .float{
+      position:fixed;
+      right:16px;
+      bottom:16px;
+      z-index:50;
+      display:flex;
+      flex-direction:column;
+      align-items:flex-end;
+      gap:10px;
+    }
+    .float a{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:14px 16px;
+      border-radius:999px;
+      color:#08110C;
+      font-weight:900;
+      background: linear-gradient(135deg, #25D366, #8BFFB9);
+      box-shadow: 0 22px 50px rgba(37,211,102,.28);
+      border: 1px solid rgba(255,255,255,.35);
+      transform: translateZ(0);
+      animation: floatPulse 1.8s infinite;
+    }
+    @keyframes floatPulse{
       0%,100%{ transform: translateY(0); }
-      50%{ transform: translateY(-6px); }
+      50%{ transform: translateY(-3px); }
     }
 
-    @keyframes hintLine{
-      0%{ transform: scaleX(.2); opacity:.2; }
-      50%{ transform: scaleX(1); opacity:1; }
-      100%{ transform: scaleX(.2); opacity:.2; }
-    }
-
-    @keyframes waPulse{
-      0%{ transform: scale(1); filter: brightness(1); }
-      50%{ transform: scale(1.04); filter: brightness(1.06); }
-      100%{ transform: scale(1); filter: brightness(1); }
-    }
-
-    @keyframes waRing{
-      0%{ transform: scale(.85); opacity:0; }
-      35%{ opacity:.9; }
-      100%{ transform: scale(1.25); opacity:0; }
-    }
-
-    @keyframes waShine{
-      0%{ transform: translateX(-140%) rotate(18deg); opacity:0; }
-      15%{ opacity:1; }
-      35%{ opacity:.9; }
-      60%{ opacity:0; }
-      100%{ transform: translateX(240%) rotate(18deg); opacity:0; }
-    }
-
-    /* Accesibilidad/performance */
-    @media (prefers-reduced-motion: reduce){
-      .logo, .card, .hint::after, #waBtn, #waBtn::before, #waBtn::after{
-        animation: none !important;
-      }
-      #waBtn:hover, #waBtn:active{ transform: none !important; }
+    @media (max-width: 920px){
+      .hero{ grid-template-columns: 1fr; }
+      .btn{ width:100%; min-width:0; }
+      .grid{ grid-template-columns: 1fr; }
+      h1{ font-size:34px; }
     }
   </style>
 </head>
 
 <body>
   <div class="wrap">
-    <div class="logo">
-      PLATAFORMA<br>VERIFICADA
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div class="brandname">RIVEX</div>
+      </div>
+      <div class="pill"><span class="dot"></span> Stock limitado • Envíos a todo el país</div>
     </div>
 
-    <div class="vip">
-      <span>ACCESO VIP</span>
+    <div class="hero">
+      <div class="card heroMain">
+        <div class="glow" aria-hidden="true"></div>
+
+        <h1>Ropa urbana que queda <span style="background:linear-gradient(135deg, var(--accent), var(--accent2)); -webkit-background-clip:text; background-clip:text; color:transparent;">bien</span> y se siente mejor.</h1>
+        <p class="sub">
+          En <b>RIVEX</b> encontrás básicos premium, streetwear y drops limitados.
+          Pedí por WhatsApp: te asesoramos en talles y combinaciones.
+        </p>
+
+        <div class="badges">
+          <div class="badge">✅ Cambios por talle</div>
+          <div class="badge">🚚 Envíos / Moto / Correo</div>
+          <div class="badge">💳 Transferencia y efectivo</div>
+        </div>
+
+        <div class="ctaRow">
+          <a class="btn primary" id="btnWpp" href="#" rel="noopener">
+            📲 Pedir por WhatsApp <span class="mini">(respuesta rápida)</span>
+          </a>
+          <a class="btn" id="btnCatalog" href="#" target="_blank" rel="noopener">
+            🧾 Ver catálogo / novedades
+          </a>
+        </div>
+      </div>
+
+      <div class="card heroSide">
+        <div class="kpi">
+          <b>Drop semanal</b>
+          <span>Nuevas prendas todas las semanas. Si algo te gustó, no lo cuelgues.</span>
+        </div>
+        <div class="kpi">
+          <b>Asesoramiento de talle</b>
+          <span>Nos pasás altura/peso y cómo te gusta que quede (fit), y te guiamos.</span>
+        </div>
+        <div class="kpi">
+          <b>Compra segura</b>
+          <span>Confirmamos stock antes de cobrar y te compartimos seguimiento del envío.</span>
+        </div>
+      </div>
     </div>
 
-    <div class="card">
-      <h1>OBTENÉ UN <span class="gold">100%</span><br>ADICIONAL</h1>
-      <p class="sub">Acceso inmediato por WhatsApp.</p>
-      <p class="hint">Tocá el botón verde para hablar con un operador.</p>
+    <div class="card section">
+      <h2>🔥 Destacados</h2>
+      <div class="grid">
+        <div class="prod">
+          <div class="prodTop">
+            <b>Remera Oversize “RIVEX Core”</b>
+            <div class="tag">Oversize</div>
+          </div>
+          <small>Algodón peinado • Caída pesada • Colores neutros</small>
+          <div class="price">Desde $ —</div>
+        </div>
 
-      <button id="waBtn" class="btn" type="button">
-        💬 WHATSAPP · HABLÁ CON UN OPERADOR
-      </button>
+        <div class="prod">
+          <div class="prodTop">
+            <b>Buzo “Night Runner”</b>
+            <div class="tag">Hoodie</div>
+          </div>
+          <small>Frisa premium • Capucha reforzada • Edición limitada</small>
+          <div class="price">Desde $ —</div>
+        </div>
+
+        <div class="prod">
+          <div class="prodTop">
+            <b>Pantalón Cargo “Street Fit”</b>
+            <div class="tag">Cargo</div>
+          </div>
+          <small>Fit relajado • Bolsillos amplios • Ideal daily</small>
+          <div class="price">Desde $ —</div>
+        </div>
+      </div>
     </div>
 
-    <footer>+18 · Jugá con responsabilidad</footer>
+    <footer>
+      <div>© <span id="year"></span> <b>RIVEX</b>. Todos los derechos reservados.</div>
+      <div class="links">
+        <a id="igLink" href="#" target="_blank" rel="noopener">Instagram</a>
+        <a id="policyLink" href="#" target="_blank" rel="noopener">Cambios & Envíos</a>
+      </div>
+    </footer>
+  </div>
+
+  <div class="float">
+    <a id="floatWpp" href="#" rel="noopener">WhatsApp • Comprar</a>
   </div>
 
   <script>
-    const PHONE_E164 = "5492235476129";
-    const MESSAGE = "Hola, quiero mas informacion y reclamar la bonificacion.";
+    // ====== CONFIGURACIÓN RÁPIDA ======
+    const WHATSAPP_NUMBER = "54911XXXXXXXX"; // <-- Cambiá por tu número (ej: 5491122334455)
+    const CATALOG_URL = "https://instagram.com/"; // <-- Link catálogo / IG / linktree
+    const INSTAGRAM_URL = "https://instagram.com/"; // <-- Tu IG
+    const POLICY_URL = "https://docs.google.com/"; // <-- Info de cambios/envíos (opcional)
 
-    const btn = document.getElementById("waBtn");
-    let fired = false;
+    // Mensaje precargado
+    const message = encodeURIComponent(
+      "Hola RIVEX 👕🔥 Quiero consultar por talles y stock.\n\n" +
+      "• Prenda: \n" +
+      "• Talle: \n" +
+      "• Color: \n" +
+      "• Envío a: \n"
+    );
 
-    function goWhatsApp(){
-      const url = "https://wa.me/" + PHONE_E164 + "?text=" + encodeURIComponent(MESSAGE);
-      window.open(url, "_blank", "noopener,noreferrer");
-    }
+    const wppUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
 
-    btn.addEventListener("click", function(){
-      if (fired) return;
-      fired = true;
+    // Setear links
+    document.getElementById("btnWpp").href = wppUrl;
+    document.getElementById("floatWpp").href = wppUrl;
+    document.getElementById("btnCatalog").href = CATALOG_URL;
+    document.getElementById("igLink").href = INSTAGRAM_URL;
+    document.getElementById("policyLink").href = POLICY_URL;
 
-      btn.disabled = true;
-      btn.style.opacity = "0.88";
-
-      try {
-        if (typeof fbq === "function") {
-          fbq('track', 'Contact', { channel: 'whatsapp' });
-          fbq('track', 'Purchase', { currency: 'USD', value: 1.00 });
-        }
-      } catch(e){}
-
-      setTimeout(goWhatsApp, 250);
-    });
+    // Año
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
-
 
